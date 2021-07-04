@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const team_controller_1 = require("./team.controller");
+const checktoken_1 = require("../../../middlewares/checktoken");
+const ClientTeamsrouter = express_1.Router();
+ClientTeamsrouter.get("/view/:id", checktoken_1.checktoken, team_controller_1.viewTeam);
+ClientTeamsrouter.get("/view", checktoken_1.checktoken, team_controller_1.viewTeams);
+ClientTeamsrouter.get("/search", team_controller_1.searchTeams);
+exports.default = ClientTeamsrouter;

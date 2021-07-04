@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const teams_controller_1 = require("./teams.controller");
+const is_admin_1 = require("../../../middlewares/is_admin");
+const checktoken_1 = require("../../../middlewares/checktoken");
+const Teamsrouter = express_1.Router();
+Teamsrouter.post("/add", checktoken_1.checktoken, is_admin_1.is_admin, teams_controller_1.addTeam);
+Teamsrouter.post("/edit/:id", checktoken_1.checktoken, is_admin_1.is_admin, teams_controller_1.editTeam);
+Teamsrouter.post("/remove/:id", checktoken_1.checktoken, is_admin_1.is_admin, teams_controller_1.removeTeam);
+Teamsrouter.get("/view/:id", checktoken_1.checktoken, is_admin_1.is_admin, teams_controller_1.viewTeam);
+Teamsrouter.get("/view", checktoken_1.checktoken, is_admin_1.is_admin, teams_controller_1.viewTeams);
+exports.default = Teamsrouter;

@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const fixture_controller_1 = require("./fixture.controller");
+const is_admin_1 = require("../../../middlewares/is_admin");
+const checktoken_1 = require("../../../middlewares/checktoken");
+const Fixturesrouter = express_1.Router();
+Fixturesrouter.post("/add", checktoken_1.checktoken, is_admin_1.is_admin, fixture_controller_1.addFixture);
+Fixturesrouter.post("/edit/:id", checktoken_1.checktoken, is_admin_1.is_admin, fixture_controller_1.editFixture);
+Fixturesrouter.post("/remove/:id", checktoken_1.checktoken, is_admin_1.is_admin, fixture_controller_1.removeFixture);
+Fixturesrouter.get("/view/:id", checktoken_1.checktoken, is_admin_1.is_admin, fixture_controller_1.viewFixture);
+Fixturesrouter.get("/view", checktoken_1.checktoken, is_admin_1.is_admin, fixture_controller_1.viewFixtures);
+Fixturesrouter.post("/generate-link/:id", checktoken_1.checktoken, is_admin_1.is_admin, fixture_controller_1.generateFixtureLink);
+exports.default = Fixturesrouter;
