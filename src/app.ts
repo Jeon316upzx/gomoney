@@ -15,8 +15,12 @@ const app: Application = express()
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-
 const apiURL = `/gomoney/api/${config_options.API_VERSION}`;
+
+//Home route
+app.get('/', (req: Request, res: Response) => {
+    return res.send('Gomoney mock premier league test');
+  });
 
 app.use(apiURL, routes());
 
