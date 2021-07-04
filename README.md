@@ -1,13 +1,12 @@
 # GOMONEY MOCK PREMIER LEAGUE
 
-# GOMONEY MOCK PREMIER LEAGUE LIVE - ??
+# GOMONEY MOCK PREMIER LEAGUE LIVE - http://gomoneytest.herokuapp.com/
 
 ## Description:
 
-This project is a demostration of my backend skillset in accordance with the
-instructions/guide given for the project. It is a simple mock premier league backend with a client and admin modules:
+This project is a simple mock premier league backend with a client and admin modules:
 
-Admin: This module helps in admin authentication and basic fixture and team management.
+Admin: This module helps in admin authentication , basic fixture and team management.
 
 Client: This module helps customers to view fixtures, teams , search etc.
 

@@ -1,9 +1,16 @@
-FROM node:12.18.1
+FROM node:latest
+
 WORKDIR /app
+
 COPY package.json /app
+
 RUN npm install
+
 COPY . /app
-CMD ['npm','start']
+
+EXPOSE 8080
+
+CMD [ "npm", "start" ]
 
 
 
