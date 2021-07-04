@@ -4,7 +4,7 @@
   "description": "football data api",
   "main": "index.js",
   "scripts": {
-    "start": "tsc -p . && node build/server.js",
+    "start": "node build/server.js",
     "dev": "tsc -p . && nodemon build/server.js",
     "build": "tsc -p .",
     "test": "mocha --timeout 20000 -r ts-node/register src/**/*.spec.ts"
